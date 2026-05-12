@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage("TEST INICIAL") {
             steps {
-                sh "echo 'HOLA MUNDO'"
+                sh "echo 'HOLA MUNDO GROVER CONDORI'"
             }
         }
         stage("Esperando") {
