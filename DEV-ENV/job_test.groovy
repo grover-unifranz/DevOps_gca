@@ -2,19 +2,28 @@ pipeline {
     agent {
         label 'slave1'
     }
+    tools{
+        jdk 'java21_slave1'
+        maven 'maven-399'
+    }
     stages {
-        stage("TEST INICIAL") {
-            steps {
-                sh "echo 'HOLA MUNDO GROVER CONDORI'"
+        stage("Limpiar Workspace"){
+            steps{
+                cleanWs()
             }
         }
-        stage("Esperando") {
+        stage("Descargar proyecto") {
             steps {
-                script {
-                    echo 'espera 15 segundos'
-                    sleep(15)
+                git credentialsId: 'git_cred', branch: 'devrsr', url: "https://github.com/grover-unifranz/DevOps_gca.git"
+            }
+        }
+        stage("Realizar Build") {
+            steps {
+                sh "mvn -v"
+                sh "pwd"
+                sh "mvn clean compile package"
                 }
             }
         }
     }
-}
+
