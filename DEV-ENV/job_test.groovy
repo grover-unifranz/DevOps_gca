@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Descargar proyecto") {
             steps {
-                git credentialsId: 'git_cred', branch: 'devrsr', url: "https://github.com/grover-unifranz/DevOps_gca.git"
+                git credentialsId: 'git_cred', branch: 'dev', url: "https://github.com/andresmerida/academic-management.git"
             }
         }
         stage("Realizar Build") {
