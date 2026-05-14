@@ -29,7 +29,7 @@ pipeline {
                 steps{
                     sh "mv am-core-web-service/target/*.jar am-core-web-service/target/app.jar"
                     stash includes:'am-core-web-service/target/app.jar', name: 'backartifact'
-                    archiveArtifact artifacts: 'am-core-web-service/target/app.jar', onlyIfSuccessful: true
+                    archiveArtifacts artifacts: 'am-core-web-service/target/app.jar', onlyIfSuccessful: true
                 }
             }
         }
