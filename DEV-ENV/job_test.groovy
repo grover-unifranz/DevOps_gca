@@ -9,7 +9,7 @@ pipeline {
     }
     parameters{
         string defaultValue: 'dev', description: 'Colocar el branch a ejecutar', name: 'BRANCH', trim: false
-        choice(name: 'SCAN_GRYPE', choice: ['YES','NO'], description:'Seleccione SI o NO')
+        choice(name: 'SCAN_GRYPE', choices: ['YES','NO'], description:'Seleccione SI o NO')
     }
     stages {
         stage("Limpiar Workspace"){
