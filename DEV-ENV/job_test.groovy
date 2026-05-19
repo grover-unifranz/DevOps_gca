@@ -74,10 +74,11 @@ pipeline {
                             withSonarQubeEnv('Sonar_CI') {
                                 def scannerHome = tool 'Sonar_CI'
                                 sh "${tool("Sonar_CI")}/bin/sonar-scanner -X"
-                                					}   
+                                						}   
                 }
             }
 
         }
-}
-    
+   }
+
+            
